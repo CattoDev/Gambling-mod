@@ -1,0 +1,23 @@
+{
+	"geode": "4.0.1",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "cattodev.gambling",
+	"name": "Gambling",
+	"version": "v1.0.0",
+	"developer": "CattoDev",
+	"description": "",
+	"resources": {
+		"sprites": [
+			"resources/*.png"
+		],
+		"files": [
+			"resources/*.ogg"
+		]
+	},
+	"repository": "https://github.com/CattoDev/Gambling-mod"
+}
