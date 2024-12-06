@@ -30,6 +30,9 @@ class $modify(MyUnlockLayer, RewardUnlockLayer) {
 	bool init(int p0, RewardsPage* p1) {
 		if(!RewardUnlockLayer::init(p0, p1)) return false;
 
+		// verify if its secret chests
+		if(m_chestType <= 2) return true;
+
 		m_fields->m_rollingLayer = RollingLayer::create(this);
 		this->addChild(m_fields->m_rollingLayer, 100);
 
