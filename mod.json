@@ -10,7 +10,7 @@
 	"name": "Gambling",
 	"version": "v1.0.0",
 	"developer": "CattoDev",
-	"description": "",
+	"description": "Recreation of the CS case opening menu.",
 	"resources": {
 		"sprites": [
 			"resources/*.png"
