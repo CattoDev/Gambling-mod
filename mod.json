@@ -19,5 +19,6 @@
 			"resources/*.ogg"
 		]
 	},
-	"repository": "https://github.com/CattoDev/Gambling-mod"
+	"repository": "https://github.com/CattoDev/Gambling-mod",
+	"tags": [ "modtober24", "joke", "customization", "interface", "offline" ]
 }
