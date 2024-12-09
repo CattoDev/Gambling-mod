@@ -6,3 +6,6 @@
 
 # 1.0.2
 - Add a mod icon
+
+# 1.0.3
+- (Hopefully) fixed gold keys
