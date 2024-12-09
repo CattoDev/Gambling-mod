@@ -9,7 +9,7 @@ using namespace geode::prelude;
 #define BOXCOUNT 40
 #define PADDING 10
 
-int g_currencySpriteTypes[] = { 4, 5, 6, 7, 8, 9, 0, 3, 0, 10, 11, 12, 13, 14 };
+int g_currencySpriteTypes[] = { 4, 5, 6, 7, 8, 9, 0, 3, 0, 10, 11, 12, 13, 14, 16 };
 
 bool RollingLayer::init(RewardUnlockLayer* unlockLayer) {
     if(!CCLayerColor::initWithColor(ccColor4B { 0, 0, 0, 0 })) return false;

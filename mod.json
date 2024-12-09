@@ -8,7 +8,7 @@
 	},
 	"id": "cattodev.gambling",
 	"name": "Gambling",
-	"version": "v1.0.2",
+	"version": "v1.0.3",
 	"developer": "CattoDev",
 	"description": "Recreation of the CS case opening menu.",
 	"resources": {
