@@ -7,7 +7,7 @@
 
 using namespace geode::prelude;
 
-class $modify(MyMenuLayer, MenuLayer) {
+/*class $modify(MyMenuLayer, MenuLayer) {
 	bool init() {
 		if (!MenuLayer::init()) {
 			return false;
@@ -20,7 +20,7 @@ class $modify(MyMenuLayer, MenuLayer) {
 
 		return true;
 	}
-};
+};*/
 
 class $modify(MyUnlockLayer, RewardUnlockLayer) {
 	struct Fields {
