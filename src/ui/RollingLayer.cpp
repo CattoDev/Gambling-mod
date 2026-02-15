@@ -1,5 +1,6 @@
 #include "RollingLayer.hpp"
 #include <random>
+#include <Geode/utils/Keyboard.hpp>
 
 using namespace geode::prelude;
 
@@ -97,6 +98,13 @@ bool RollingLayer::init(RewardUnlockLayer* unlockLayer) {
 
     // prepare
     m_contentLayer->setScaleY(0.f);
+
+    m_inputEvent = KeyboardInputEvent(KEY_Escape).listen([this](KeyboardInputData& event) {
+        // quick open
+        this->animationFinished();
+
+        return ListenerResult::Propagate;
+    });
     
     return true;
 }
@@ -312,7 +320,7 @@ void RollingLayer::update(float dt) {
     #define MAXOPACITY 105
     #define FADEIN_TIME .25f
     #define SCALE_TIME .25f
-    #define TOTAL_TIME 7.5f
+    #define TOTAL_TIME 5.f
 
     // fix the skip in animation from the lag of loading icons
     if(m_smoothFix > 0) {
@@ -340,7 +348,8 @@ void RollingLayer::update(float dt) {
 
     // move
     float x = m_timeElapsed / TOTAL_TIME;
-    float posFactor = 1.f + std::powf(x - 1, 3.f);
+    //float posFactor = 1.f + std::powf(x - 1, 3.f); // old
+    float posFactor = -std::powf(x, 2.f) + 2 * x;
 
     float newX = m_moveAmountX * posFactor;
 
@@ -369,18 +378,14 @@ void RollingLayer::update(float dt) {
     }
 }
 
-void RollingLayer::keyDown(enumKeyCodes key) {
-    log::debug("keyDown");
-
+/*void RollingLayer::keyDown(enumKeyCodes key) {
     if(key == enumKeyCodes::KEY_Escape) {
         // quick open
         this->animationFinished();
     }
-}
+}*/
 
 void RollingLayer::animationFinished() {
-    log::debug("done!!!!!!!!!");
-
     this->unscheduleUpdate();
 
     if(m_isGold) {

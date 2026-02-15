@@ -19,6 +19,7 @@ public:
     RewardBox* m_hoveringBox = nullptr;
     bool m_isGold = false;
     int m_smoothFix = 2;
+    geode::ListenerHandle m_inputEvent;
 
 public:
     struct RewardMeta {
@@ -45,7 +46,6 @@ public:
     void closeAndAward();
 
     void update(float dt) override;
-    void keyDown(cocos2d::enumKeyCodes) override;
 
     static RollingLayer* create(RewardUnlockLayer* unlockLayer);
 };
