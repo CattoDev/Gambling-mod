@@ -2,6 +2,9 @@
 
 #include <Geode/Geode.hpp>
 
+#define REWARDBOX_WIDTH 100.f
+#define REWARDBOX_HEIGHT 80.f
+
 class RewardBox : public cocos2d::CCNode {
 public:
     cocos2d::CCLayerColor* m_background;

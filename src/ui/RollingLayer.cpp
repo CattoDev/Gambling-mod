@@ -4,9 +4,6 @@
 
 using namespace geode::prelude;
 
-/*
-    TODO: optimize
-*/
 #define BOXCOUNT 40
 #define PADDING 10
 
@@ -26,6 +23,7 @@ bool RollingLayer::init(RewardUnlockLayer* unlockLayer) {
 
     m_itemsMenu = CCMenu::create();
     m_itemsMenu->setPosition(CCPointZero);
+    m_itemsMenu->setLayout(RowLayout::create()->setAutoScale(false)->setGap(PADDING)->setAutoGrowAxis(0.f), true, false);
 
     // extra menu cuz yes
     auto menu = CCMenu::create();
@@ -232,8 +230,7 @@ void RollingLayer::createRewardBoxes() {
 
         m_itemsMenu->addChild(box);
     }
-
-    m_itemsMenu->alignItemsHorizontallyWithPadding(PADDING);
+    m_itemsMenu->updateLayout();
 
     // reposition menu
     auto box = typeinfo_cast<RewardBox*>(m_itemsMenu->getChildren()->objectAtIndex(0));
@@ -514,7 +511,7 @@ CCMenu* RollingLayer::createMenuFromRewardObjects(CCArray* rewardObjects) {
             spr->setScale(.7f);
             subMenu->addChild(spr);
 
-            subMenu->alignItemsHorizontallyWithPadding(5);
+            subMenu->setLayout(RowLayout::create()->setGap(5.f)->setAutoScale(false));
             subMenu->setPosition(CCPointZero);
             subMenu->setContentHeight(22.f);
 
@@ -522,7 +519,7 @@ CCMenu* RollingLayer::createMenuFromRewardObjects(CCArray* rewardObjects) {
         }
     }
 
-    menu->alignItemsVertically();
+    menu->setLayout(ColumnLayout::create()->setAxisReverse(true));
     menu->setPosition(CCPointZero);
 
     return menu;

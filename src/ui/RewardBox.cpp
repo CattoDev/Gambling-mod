@@ -5,7 +5,7 @@ using namespace geode::prelude;
 bool RewardBox::init() {
     if(!CCNode::init()) return false;
 
-    this->setContentSize(CCSize { 100, 80 });
+    this->setContentSize(CCSize { REWARDBOX_WIDTH, REWARDBOX_HEIGHT });
 
     // background
     m_background = CCLayerColor::create(ccColor4B { 100, 100, 100, 255 });
