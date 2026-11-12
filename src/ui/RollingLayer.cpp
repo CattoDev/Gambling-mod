@@ -99,7 +99,9 @@ bool RollingLayer::init(RewardUnlockLayer* unlockLayer) {
 
     m_inputEvent = KeyboardInputEvent(KEY_Escape).listen([this](KeyboardInputData& event) {
         // quick open
-        this->animationFinished();
+        if(this->isKeyboardEnabled()) {
+            this->animationFinished();
+        }
 
         return ListenerResult::Propagate;
     });

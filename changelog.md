@@ -1,6 +1,10 @@
+# 2.1.0
+- Updated to geode v5.11.2 (GD 2.2091)
+- Added shaders
+
 # 2.0.0
-- updated to Geode v5
-- adjusted rolling animation
+- Updated to Geode v5
+- Adjusted rolling animation
 
 # 1.0.3
 - (Hopefully) fixed gold keys
