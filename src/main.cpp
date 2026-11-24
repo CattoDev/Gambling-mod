@@ -8,7 +8,7 @@
 using namespace geode::prelude;
 
 class $modify(MyMenuLayer, MenuLayer) {
-	bool init() {
+	/*bool init() {
 		if (!MenuLayer::init()) {
 			return false;
 		}
@@ -19,7 +19,7 @@ class $modify(MyMenuLayer, MenuLayer) {
 		GameStatsManager::sharedState()->setStat("43", 1000); // gold keys
 
 		return true;
-	}
+	}*/
 };
 
 class $modify(MyUnlockLayer, RewardUnlockLayer) {
