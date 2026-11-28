@@ -1,6 +1,5 @@
 # 2.1.0
 - Updated to geode v6.0.0 (GD 2.2091)
-- Added shaders
 
 # 2.0.0
 - Updated to Geode v5
